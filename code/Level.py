@@ -77,15 +77,15 @@ class Level:
                 if not found_player:
                     return False
 
-            # printed text
-            self.level_text(14, f'{self.name} - Timeout: {self.timeout / 1000 :.1f}s', C_WHITE, (10, 5))
-            self.level_text(14, f'fps: {clock.get_fps() :.0f}', C_WHITE, (10, WIN_HEIGHT - 35))
-            self.level_text(14, f'entidades: {len(self.entity_list)}', C_WHITE, (10, WIN_HEIGHT - 20))
-            pygame.display.flip()
-            # Collision
-            EntityMediator.verify_collision(entity_list=self.entity_list)
-            EntityMediator.verify_health(entity_list=self.entity_list)
-        pass
+                # printed text
+                self.level_text(14, f'{self.name} - Timeout: {self.timeout / 1000 :.1f}s', C_WHITE, (10, 5))
+                self.level_text(14, f'fps: {clock.get_fps() :.0f}', C_WHITE, (10, WIN_HEIGHT - 35))
+                self.level_text(14, f'entidades: {len(self.entity_list)}', C_WHITE, (10, WIN_HEIGHT - 20))
+                pygame.display.flip()
+                # Collision
+                EntityMediator.verify_collision(entity_list=self.entity_list)
+                EntityMediator.verify_health(entity_list=self.entity_list)
+            pass
 
     def level_text(self, text_size: int, text: str, text_color: tuple, text_pos: tuple):
         text_font: Font = pygame.font.SysFont(name="Lucida Sans Typewriter", size=text_size)
